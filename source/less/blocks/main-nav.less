@@ -1,0 +1,44 @@
+.main-nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.main-nav__tabs {
+    .list-clean();
+    display: flex;
+    align-items: flex-end;
+}
+
+.main-nav__tab {
+    font-family: "Comfortaa", "Arial", sans-serif;
+    font-size: 24px;
+    line-height: 27px;
+
+    padding: 1% 10%;
+    border-radius: 5px 0px 0px 0px;
+    border: 2px solid @white;
+    border-bottom: none;
+}
+
+.main-nav__tab--active {
+    background-color: @white;
+    color: @black;
+    position: relative;
+}
+
+.main-nav__tab--active::after {
+    position: absolute;
+    content: "";
+    width: 36px;
+    height: 36px;
+    background-image: url(../img/bookmark.svg);
+    background-repeat: no-repeat;
+    top: -5px;
+    right: 10px;
+}
+
+.main-nav__logo {
+    padding: 5% 0 5% 30%;
+    background-image: url(../img/icon_wheel.png);
+    background-repeat: no-repeat;
+}
