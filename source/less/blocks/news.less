@@ -1,120 +1,120 @@
 .news .news__item:nth-child(even) {
-    background-color: @light-grey;
-    text-align: left;
+  background-color: @light-grey;
+  text-align: left;
 }
 
 .news .news__item:nth-child(even) .news__img {
-    @media (min-width: @desktop-width) {
-        order: 2;
-    }
+  @media (min-width: @desktop-width) {
+    order: 2;
+  }
 }
 
 .news__item {
-    padding: 20px 20px;
+  padding: 20px 20px;
 
-    @media (min-width: @tablet-width) {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    @media (min-width: @desktop-width) {
-        display: grid;
-        grid-template-areas:
-            "b b a"
-            "b b c"
-            "b b c";
-        grid-template-rows: 72px 1fr 0px;
-        grid-template-columns: 1fr 2fr;
-    }
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: @desktop-width) {
+    display: grid;
+    grid-template-areas:
+      "b b a"
+      "b b c"
+      "b b c";
+    grid-template-rows: 72px 1fr 0px;
+    grid-template-columns: 1fr 2fr;
+  }
 }
 
 .news__item h2 {
-    font-family: "Nunito", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 150%;
+  font-family: "Nunito", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 150%;
 
-    @media (min-width: @tablet-width) {
-        font-size: 26px;
-        line-height: 40px;        
-    }
-    
-    @media (min-width: @desktop-width) {
-        font-size: 36px;
-        line-height: 40px;
-        margin-left: 50%;
-    }
+  @media (min-width: @tablet-width) {
+    font-size: 26px;
+    line-height: 40px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 36px;
+    line-height: 40px;
+    margin-left: 50%;
+  }
 }
 
 .news__img {
 
-    @media (min-width: @tablet-width) {
-        width: 50%;
-    }
+  @media (min-width: @tablet-width) {
+    width: 50%;
+  }
 
-    @media (min-width: @desktop-width) {
-        grid-area: b;
-        margin-top: 45px;
-    }
+  @media (min-width: @desktop-width) {
+    grid-area: b;
+    margin-top: 45px;
+  }
 }
 
 .news__img img {
 
-    @media (min-width: @tablet-width) {
-        padding-top: 29px;
-    }
+  @media (min-width: @tablet-width) {
+    padding-top: 29px;
+  }
 
-    @media (min-width: @desktop-width) {
-        padding-top: 0;
-    }
+  @media (min-width: @desktop-width) {
+    padding-top: 0;
+  }
 }
 
 .news__text {
 
-    @media (min-width: @tablet-width) {
-        width: 50%;
-    }
+  @media (min-width: @tablet-width) {
+    width: 50%;
+  }
 
-    @media (min-width: @desktop-width) {
-        grid-area: c;
-        margin-left: 50%;
-        margin-top: 60px;
-    }
+  @media (min-width: @desktop-width) {
+    grid-area: c;
+    margin-left: 50%;
+    margin-top: 60px;
+  }
 }
 
 .news__item p {
-    font-size: 16px;
-    line-height: 150%;
-    color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.8);
 
-    @media (min-width: @tablet-width) {
-        font-size: 24px;
-        line-height: 30px;
-    }
-    
-    @media (min-width: @desktop-width) {
-        font-size: 24px;
-        line-height: 30px;
-    }
+  @media (min-width: @tablet-width) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
 
 .news__expand {
-    font-size: 18px;
-    line-height: 25px;
-    border: 2px solid @dark-grey;
-    border-radius: 5px;
-    color: @dark-grey;
-    display: inline-block;
-    padding: 3px 38px;
+  font-size: 18px;
+  line-height: 25px;
+  border: 2px solid @dark-grey;
+  border-radius: 5px;
+  color: @dark-grey;
+  display: inline-block;
+  padding: 3px 38px;
 
-    @media (min-width: @tablet-width) {
-        font-size: 24px;
-        line-height: 33px;
-    }
-    
-    @media (min-width: @desktop-width) {
-        font-size: 24px;
-        line-height: 33px;    
-    }
+  @media (min-width: @tablet-width) {
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  @media (min-width: @desktop-width) {
+    font-size: 24px;
+    line-height: 33px;
+  }
 }
