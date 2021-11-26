@@ -1,0 +1,18 @@
+.social-list {
+    .list-clean();
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @media (min-width: @tablet-width) {
+        justify-content: flex-end;
+    }
+
+    @media (min-width: @desktop-width) {
+        margin-left: 520px;
+    }
+    
+    @media (min-width: @other-width) {
+        margin-left: 930px;
+    }
+}

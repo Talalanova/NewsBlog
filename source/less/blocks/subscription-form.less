@@ -1,8 +1,95 @@
- form {
+.subscription-form form {
+
     background-color: @dark-grey;
+    border-radius: 5px;
     padding: 25px;
+
+    @media (min-width: @tablet-width) {
+
+    }
+    
+      @media (min-width: @desktop-width) {
+
+
+    }
+  
+      @media (min-width: @other-width) {
+
+    }
+
 }
 
 .subscription-form {
-    padding: 30px 40px 0 15px;
+
+    padding: 40px 0 20px;
+    @media (min-width: @tablet-width) {
+
+    }
+    
+    @media (min-width: @desktop-width) {
+        order: -1;
+    }
+  
+    @media (min-width: @other-width) {
+        padding: 30px 0px 20px 0px;
+    }
+}
+
+.subscription-form p {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.subscription-form button {
+
+    display: block;
+    color: @white;
+    border-radius: 5px;
+    border: none;
+    background-color: @black;
+    font-size: 18px;
+    line-height: 25px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 5px 0;
+    @media (min-width: @tablet-width) {
+        width: auto;
+        padding: 11px 25px;
+        display: inline-block;
+        margin-left: 40px;
+    }
+  
+    @media (min-width: @desktop-width) {
+        padding: 11px 10px;
+        margin-left: 25px;
+    }
+
+    @media (min-width: @other-width) {
+
+    }
+}
+
+.subscription-form input {
+    padding: 10px 48px;
+    border-radius: 5px;
+    color: #928C8C;
+    padding: 10px 58px 10px 30px;
+    
+    @media (min-width: @tablet-width) {
+        width: auto;
+        padding: 12px 230px 12px 25px;
+    }
+  
+    @media (min-width: @desktop-width) {
+        font-size: 14px;
+        line-height: 19px;
+        padding: 12px 130px 12px 25px;
+
+
+    }
+
+    @media (min-width: @other-width) {
+
+    }
 }
