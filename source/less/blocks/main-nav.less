@@ -4,23 +4,27 @@
 
   @media (min-width: @desktop-width) {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: min-content 1fr;
+  }
+
+  @media (min-width: @other-width) {
+    padding: 0 210px;
   }
 }
 
-.main-nav__tabs {
+.main-nav__links {
   .list-clean();
   padding: 20px 30px;
   width: 100%;
+  border-radius: 5px;
 
   @media (min-width: @tablet-width) {
-    padding: 40px;
+    padding: 0 40px;
     position: absolute;
-    height: 200px;
-    width: 280px;
+    width: 260px;
     z-index: 1;
     background-color: black;
-    margin-left: 140px;
+    margin-left: 180px;
     margin-top: 110px;
   }
 
@@ -33,29 +37,65 @@
     margin-left: 0;
     margin-top: 0;
     padding: 15px 0 0 15px;
-  }
-
-  @media (min-width: @other-width) {
     align-items: flex-end;
-
+    justify-content: space-between;
+    padding-left: 160px;
   }
 }
+
+.main-nav--closed .main-nav__links {
+
+  @media (max-width: 1023px) {
+    padding: 0;
+  }
+}
+
+.main-nav__tabs {
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 
 .main-nav__tab {
   font-family: "Comfortaa", "Arial", sans-serif;
   font-size: 24px;
   line-height: 27px;
   text-align: center;
-  padding: 12px 0;
+  padding: 18px 0;
   border-top: 2px solid rgba(230, 230, 230, 0.5);
 
   @media (min-width: @desktop-width) {
-    padding: 1% 10%;
-    border-radius: 5px 0px 0px 0px;
+    padding: 5px 73px 0;
+    border-radius: 5px;
     border: 2px solid @white;
-    border-bottom: none;
   }
 }
+
+// Затемнение экрана при открытии меню
+
+.main-nav--opened .overlay {
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: fixed;
+  left: 0;
+  z-index: 1;
+  background-color: black;
+}
+
+.main-nav--opened .main-nav__links {
+  z-index: 2;
+}
+
+.main-nav--opened .main-nav__toggle {
+  z-index: 2;
+}
+
+// Красная закладка на активной вкладке
+
 
 .main-nav__tab--active {
 
@@ -78,11 +118,6 @@
     top: -5px;
     right: 10px;
   }
-}
-
-.main-nav__logo {
-  padding: 0;
-  width: 90%;
 }
 
 // Внешний вид кнопки открывающей/закрывающей меню

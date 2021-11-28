@@ -2,18 +2,24 @@
   font-size: 24px;
   line-height: 27px;
   text-align: center;
-  padding: 12px 0;
-  border-top: 2px solid rgba(230, 230, 230, 0.5);
+  padding: 18px 0;
 
   @media (min-width: @desktop-width) {
     order: 2;
     padding: 8px 50px;
-    margin-left: 150px;
     border: 1px solid white;
     border-radius: 10px;
   }
 
   @media (min-width: @other-width) {
-    margin-left: 100px;
+
   }
+}
+
+
+.main-nav--closed .user-nav {
+  @media (max-width: 1023px) {
+      display: none;
+  }
+
 }
