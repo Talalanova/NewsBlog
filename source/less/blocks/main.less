@@ -1,6 +1,11 @@
 .main__wrap {
+
+  display: grid;
+  grid-template-rows: 0 1fr 210px;
+
   @media (min-width: @other-width) {
-    display: grid;
     grid-template-columns: min-content 1fr min-content;
+    grid-template-rows: none;
+
   }
 }
