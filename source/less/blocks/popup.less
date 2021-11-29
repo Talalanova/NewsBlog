@@ -1,0 +1,167 @@
+.popup {
+  display: none;
+
+  width: 290px;
+  background-color: @white;
+
+  position: absolute;
+  overflow: auto;
+  height: 100%;
+  padding: 10px 10px;
+
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+
+
+  @media (min-width: @tablet-width) {
+    width: 668px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1470px;
+  }
+
+  @media (min-width: @other-width) {
+    width: 1470px;
+  }
+}
+
+.popup__close {
+  border: none;
+  float: right;
+  background-color: inherit;
+}
+
+.popup .social-list {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.popup .social-list__item:first-child {
+  @media (max-width: @tablet-width) {
+    width: 100%;
+  }
+}
+.popup__photo,
+.popup__video  {
+  text-align: center;
+}
+
+.popup__photo img,
+.popup__video img {
+  width: 100%;
+}
+
+.popup h2 {
+  font-family: "Nunito", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 150%;
+
+  @media (min-width: @desktop-width) {
+    font-size: 64px;
+    line-height: 65px;
+    padding: 20px 50px;
+  }
+}
+
+.popup__text {
+  font-size: 24px;
+  line-height: 30px;
+  padding: 10px;
+
+  @media (min-width: @desktop-width) {
+    padding: 20px 50px;
+  }
+}
+
+.popup__news {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+  overflow-x: scroll;
+  width: auto;
+  white-space: nowrap;
+  gap: 20px;
+
+  @media (min-width: @desktop-width) {
+    padding: 20px 50px;
+  }
+}
+
+.popup__news img {
+  max-width: 270px;
+  max-height: 167px;
+}
+
+.popup h3 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 30px;
+  @media (min-width: @tablet-width) {
+    font-size: 48px;
+  }
+}
+
+.popup__news-item {
+  max-width: 230px;
+}
+
+.popup__news-item p {
+  white-space: break-spaces;
+}
+
+.popup__share .social-list {
+  background-color: @black;
+  color: @white;
+}
+
+.popup__comments {
+  padding: 20px 0;
+}
+
+.popup__comments form {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.popup__comments textarea {
+  font-family: "Nunito", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 30px;
+  width: 100%;
+  padding: 10px 0px 20px 20px;
+  box-sizing: border-box;
+  border: none;
+}
+
+.popup__comments button {
+  font-family: "Nunito", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  padding: 5px 20px;
+  background-color: @white;
+
+  border: 2px solid #333333;
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  margin-bottom: 10px;
+}
+
+.popup__blurb {
+  height: 100px;
+  background-image: url(../img/background.png);
+}
+
+
