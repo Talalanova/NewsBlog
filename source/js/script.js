@@ -23,3 +23,12 @@ openNewsPopup.forEach(button => {
 closeNewsPopup.addEventListener('click', () => {
   newsPopup.style.display = "none"
 })
+
+
+// Прокрутка страницы к началу по кнопке скролла
+
+const topButton = document.querySelector('#scrollToTop')
+
+topButton.addEventListener('click', () => {
+  window.scrollTo(0 , 1);
+})
