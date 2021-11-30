@@ -2,28 +2,33 @@
   background-color: #F2F2F2;
   border-radius: 5px;
   color: black;
-  position: fixed;
-  top: 200px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
   border: 2px solid black;
   max-width: 320px;
-
-  display: none;
+  // display: none;
 }
 
 .modal input {
-  padding: 10px 50px 10px 20px;
+  padding: 10px;
   border-radius: 5px;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(160, 160, 160, 0.6);
+  margin: 8px 0;
+  border: none;
 }
 
-.modal form {
-  padding: 20px;
-  width: 100%;
-}
 
 .modal fieldset {
   display: flex;
   flex-direction: column;
   border: none;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
 }
 
 
@@ -35,22 +40,46 @@
   line-height: 33px;
 }
 
+.modal__signup,
+.modal__login {
+  padding: 20px;
+}
 
-.modal button {
+.modal__signup form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.modal__signup button,
+.modal__login button {
+  display: block;
   color: @white;
   background-color: @black;
   border-radius: 5px;
-  padding: 10px 30px;
+  border: none;
+  padding: 5px 30px;
   font-family: "Nunito", "Arial", sans-serif;
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
 }
 
-
-.modal__signup,
-.modal__login {
-  display: flex;
-  flex-wrap: wrap;
+.modal__login button {
+  width: 100%;
 }
 
+.modal__signup button {
+  width: 45%;
+}
+
+.modal__login {
+  text-align: center;
+}
+
+.modal__login p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
