@@ -2,10 +2,24 @@
   font-size: 24px;
   line-height: 27px;
   text-align: center;
-  padding: 18px 0;
+  margin-bottom: 15px;
 
   @media (min-width: @desktop-width) {
     order: 2;
+  }
+
+  @media (min-width: @other-width) {
+
+  }
+}
+
+.user-nav a {
+  color: @white;
+  text-decoration: none;
+  padding: 18px 0;
+  display: block;
+  @media (min-width: @desktop-width) {
+
     padding: 5px 30px;
     border: 1px solid white;
     border-radius: 10px;
@@ -14,11 +28,6 @@
   @media (min-width: @other-width) {
     padding: 8px 50px;
   }
-}
-
-.user-nav a {
-  color: @white;
-  text-decoration: none;
 }
 
 

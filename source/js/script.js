@@ -61,3 +61,43 @@ document.addEventListener('click', event => {
     selectTab(event.target);
   }
 }, false);
+
+// Открытие окна входа-регистрации
+
+const loginButton = document.querySelector('#loginButton');
+const modal = document.querySelector('.modal');
+
+loginButton.addEventListener('click', () => {
+  modal.style.display = "block"
+})
+
+// Вкладки вход-регистрация
+
+const selectModalTab = element => {
+  const active = modal.querySelector('.active');
+  const visible = modal.querySelector('.modal__tab--visible');
+  const tabContent = document.getElementById(element.href.split('#')[1]);
+  if (active) {
+    active.classList.remove('active');
+  }
+  element.classList.add('active');
+  if (visible) {
+    visible.classList.remove('modal__tab--visible');
+  }
+  tabContent.classList.add('modal__tab--visible');
+}
+
+document.addEventListener('click', event => {
+  if (event.target.matches('.modal__tabs-item a')) {
+    selectModalTab(event.target);
+  }
+  if (event.target.matches('.modal__login a')) {
+    selectModalTab(event.target);
+  }
+}, false);
+
+window.addEventListener('keydown', (evt) => {
+  if (isEscapeKey(evt)) {
+    modal.style.display = "none";
+  }
+});

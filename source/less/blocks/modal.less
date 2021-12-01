@@ -4,11 +4,57 @@
   color: black;
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 35vh;
   transform: translate(-50%, -50%);
   border: 2px solid black;
-  max-width: 320px;
-  // display: none;
+  width: 300px;
+  display: none;
+
+  @media (min-width: @tablet-width) {
+    width: 414px;
+  }
+}
+
+.modal__wrapper {
+  position: relative;
+}
+
+.modal__tab {
+  position: absolute;
+  padding: 1.75em 0;
+  visibility: hidden;
+  height: 0;
+}
+
+.modal__tab--visible {
+  position: static;
+  visibility: visible;
+  height: auto;
+}
+
+.modal__tabs {
+
+  .list-clean();
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: @black;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+}
+
+.modal__tabs a {
+  color: @white;
+}
+
+.modal__tabs-item a {
+  padding-bottom: 9px;
+}
+
+.modal__tabs .active {
+  border-bottom: 3px solid white;
 }
 
 .modal input {
@@ -82,4 +128,62 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 27px;
+}
+
+
+.modal__remind-password {
+  padding: 20px;
+
+  @media (min-width: @tablet-width) {
+    width: auto;
+  }
+}
+
+.modal__remind-password p {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 43px;
+  width: 100%;
+  margin: 0;
+}
+
+.modal__remind-password input {
+  width: 100%;
+  position: relative;
+  background-image: url(../img/icon_mail.svg);
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding-left: 40px;
+}
+
+.modal__remind-password span {
+  font-size: 12px;
+  line-height: 16px;
+  width: 100%;
+}
+
+.modal__remind-password button {
+  border: none;
+  position: absolute;
+  background-color:@white;
+  right: 0px;
+  bottom: 85px;
+
+  @media (min-width : @tablet-width) {
+    bottom: 85px;
+  }
+
+}
+
+.modal__remind-password form {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.modal__remind-password a {
+  font-size: 16px;
+  line-height: 43px;
+  color : rgba(24, 119, 242, 0.55);
+  margin-top: 15px;
 }
