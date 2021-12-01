@@ -1,6 +1,7 @@
 .popup {
   display: none;
-
+  scrollbar-color: #6969dd #e0e0e0;
+  scrollbar-width: thin;
   width: 290px;
   background-color: @white;
   overflow: auto;
@@ -24,6 +25,22 @@
   @media (min-width: @other-width) {
     width: 1470px;
   }
+}
+
+.popup::-webkit-scrollbar {
+  width: 8px;
+  height: 100px;
+}
+
+.popup::-webkit-scrollbar-track {
+  background-color: inherit;
+  opacity: 0.7;
+  border-radius: 100px;
+}
+
+.popup::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .popup__close {
@@ -90,6 +107,21 @@
   @media (min-width: @desktop-width) {
     padding: 20px 50px;
   }
+}
+
+.popup__news::-webkit-scrollbar {
+  height: 7px;
+}
+
+.popup__news::-webkit-scrollbar-track {
+  background-color: inherit;
+  opacity: 0.7;
+  border-radius: 100px;
+}
+
+.popup__news::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .popup__news img {

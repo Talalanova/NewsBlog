@@ -7,6 +7,12 @@ openMainNavigation.addEventListener('click', () => {
   mainNavigation.classList.toggle('main-nav--closed')
 })
 
+window.addEventListener('click', (evt) => {
+  if (evt.target.matches('.main-nav__links a')) {
+    mainNavigation.classList.toggle('main-nav--closed')
+  }
+})
+
 
 // Открытие - закрытие попапа с полной новостью
 
@@ -36,7 +42,7 @@ window.addEventListener('keydown', (evt) => {
 const topButton = document.querySelector('#scrollToTop')
 
 topButton.addEventListener('click', () => {
-  window.scrollTo(0 , 1);
+  window.scrollTo({top: 0, behavior: 'smooth'});
 })
 
 
@@ -57,18 +63,26 @@ const selectTab = element => {
 }
 
 document.addEventListener('click', event => {
+  event.preventDefault();
   if (event.target.matches('.main-nav__tabs a')) {
     selectTab(event.target);
   }
 }, false);
 
-// Открытие окна входа-регистрации
+// Открытие закрытие окна входа-регистрации
 
+const overlay = document.querySelector('.main__overlay')
 const loginButton = document.querySelector('#loginButton');
 const modal = document.querySelector('.modal');
 
 loginButton.addEventListener('click', () => {
-  modal.style.display = "block"
+  modal.style.display = "block";
+  overlay.style.display = "block"
+})
+
+overlay.addEventListener('click', () => {
+  modal.style.display = "none";
+  overlay.style.display = "none"
 })
 
 // Вкладки вход-регистрация
@@ -89,9 +103,11 @@ const selectModalTab = element => {
 
 document.addEventListener('click', event => {
   if (event.target.matches('.modal__tabs-item a')) {
+    event.preventDefault();
     selectModalTab(event.target);
   }
   if (event.target.matches('.modal__login a')) {
+    event.preventDefault();
     selectModalTab(event.target);
   }
 }, false);
