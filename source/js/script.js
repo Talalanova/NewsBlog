@@ -1,10 +1,27 @@
+// Функция плавного появления блока
+
+const fadeIn = (element, duration) => {
+  (function increment(value = 0) {
+      element.style.opacity = String(value);
+      if (element.style.opacity !== '1') {
+          setTimeout(() => {
+            increment(value + 0.1);
+          }, duration / 10);
+      }
+  })();
+}
+
+// Подложка под мобильное меню и новостной попап
+
+const overlay = document.querySelector('.main__overlay');
+
 // Открытие - закрытие мобильного меню
 
 const mainNavigation = document.querySelector('.main-nav');
 const openMainNavigation = document.querySelector('.main-nav__toggle');
 
 openMainNavigation.addEventListener('click', () => {
-  mainNavigation.classList.toggle('main-nav--closed')
+  mainNavigation.classList.toggle('main-nav--closed');
 })
 
 window.addEventListener('click', (evt) => {
@@ -23,19 +40,26 @@ const isEscapeKey = (evt) => evt.key === 'Escape';
 
 openNewsPopup.forEach(button => {
   button.addEventListener('click', () => {
-    newsPopup.style.display = "block"
+  newsPopup.style.display = "block";
+  fadeIn(newsPopup, 300)
+  overlay.style.display = "block";
   })
 })
 
 closeNewsPopup.addEventListener('click', () => {
-  newsPopup.style.display = "none"
+  newsPopup.style.display = "none";
+  overlay.style.display = "none";
+})
+
+overlay.addEventListener('click', () => {
+  newsPopup.style.display = "none";
 })
 
 window.addEventListener('keydown', (evt) => {
   if (isEscapeKey(evt)) {
     newsPopup.style.display = "none";
   }
-});
+})
 
 // Прокрутка страницы к началу
 
@@ -67,17 +91,17 @@ document.addEventListener('click', event => {
   if (event.target.matches('.main-nav__tabs a')) {
     selectTab(event.target);
   }
-}, false);
+}, false)
 
 // Открытие закрытие окна входа-регистрации
 
-const overlay = document.querySelector('.main__overlay')
 const loginButton = document.querySelector('#loginButton');
 const modal = document.querySelector('.modal');
 
 loginButton.addEventListener('click', () => {
   modal.style.display = "block";
-  overlay.style.display = "block"
+  fadeIn(modal, 200);
+  overlay.style.display = "block";
 })
 
 overlay.addEventListener('click', () => {
@@ -110,10 +134,10 @@ document.addEventListener('click', event => {
     event.preventDefault();
     selectModalTab(event.target);
   }
-}, false);
+}, false)
 
 window.addEventListener('keydown', (evt) => {
   if (isEscapeKey(evt)) {
     modal.style.display = "none";
   }
-});
+})
