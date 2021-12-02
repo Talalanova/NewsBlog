@@ -2,7 +2,7 @@
 
   display: grid;
   grid-template-rows: 0 1fr 210px;
-  height: 100%;
+  // height: 100%;
 
   @media (min-width: @other-width) {
     grid-template-columns: min-content 1fr min-content;
@@ -11,7 +11,7 @@
 }
 
 .main {
-  position: relative;
+ position: relative;
 }
 
 .main__overlay {
@@ -23,4 +23,6 @@
   bottom: 0;
   z-index: 1;
   display: none;
+  background-color: @black;
+  opacity: 0.7;
 }
