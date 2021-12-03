@@ -4,9 +4,9 @@ const fadeIn = (element, duration) => {
   (function increment(value = 0) {
       element.style.opacity = String(value);
       if (element.style.opacity !== '1') {
-          setTimeout(() => {
-            increment(value + 0.1);
-          }, duration / 10);
+        setTimeout(() => {
+          increment(value + 0.1);
+        }, duration / 10);
       }
   })();
 }
@@ -29,7 +29,6 @@ window.addEventListener('click', (evt) => {
     mainNavigation.classList.toggle('main-nav--closed')
   }
 })
-
 
 // Открытие - закрытие попапа с полной новостью
 
@@ -72,7 +71,7 @@ topButton.addEventListener('click', () => {
 
 // Вкладки по типам авто
 
-const selectTab = element => {
+const selectMainTab = element => {
   const active = document.querySelector('.main-nav__tab--active');
   const visible = document.querySelector('.news__content--visible');
   const tabContent = document.getElementById(element.href.split('#')[1]);
@@ -89,7 +88,37 @@ const selectTab = element => {
 document.addEventListener('click', event => {
   event.preventDefault();
   if (event.target.matches('.main-nav__tabs a')) {
-    selectTab(event.target);
+    selectMainTab(event.target);
+  }
+}, false)
+
+// Переход на вкладки по ссылкам из футера
+
+const selectFooterTab = element => {
+  const active = document.querySelector('.main-nav__tab--active');
+  const mainTabs = document.querySelectorAll('.main-nav__tab');
+  const visible = document.querySelector('.news__content--visible');
+  const tabContent = document.getElementById(element.href.split('#')[1]);
+
+  if (active) {
+    active.classList.remove('main-nav__tab--active');
+  }
+  mainTabs.forEach(tab => {
+    if (tab.href.split('#')[1] == element.href.split('#')[1]) {
+      tab.classList.add('main-nav__tab--active');
+    }
+  })
+  if (visible) {
+    visible.classList.remove('news__content--visible');
+  }
+  tabContent.classList.add('news__content--visible');
+}
+
+document.addEventListener('click', event => {
+  event.preventDefault();
+  if (event.target.matches('.footer__links a')) {
+    selectFooterTab(event.target);
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 }, false)
 
@@ -97,11 +126,19 @@ document.addEventListener('click', event => {
 
 const loginButton = document.querySelector('#loginButton');
 const modal = document.querySelector('.modal');
+const footerLoginButton = document.querySelector('.footer__login');
 
 loginButton.addEventListener('click', () => {
   modal.style.display = "block";
   fadeIn(modal, 200);
   overlay.style.display = "block";
+})
+
+footerLoginButton.addEventListener('click', () => {
+  modal.style.display = "block";
+  fadeIn(modal, 200);
+  overlay.style.display = "block";
+  window.scrollTo({top: 0, behavior: 'smooth'});
 })
 
 overlay.addEventListener('click', () => {
